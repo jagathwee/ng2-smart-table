@@ -19,7 +19,7 @@
     "ngc": "node_modules/.bin/ngc",
     "start": "ng serve",
     "start:aot": "ng serve --aot",
-    "build": "npm run clean:dist && ng build",
+    "build": "tsc -d",
     "build:prod": "npm run build -- --prod",
     "build:prod:aot": "npm run build:prod -- --aot",
     "build:ci": "npm run build:prod && npm run build:prod:aot && npm run build:release",
@@ -33,7 +33,8 @@
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "ng e2e",
     "clean:dist": "npm run rimraf -- dist",
-    "changelog": "standard-changelog"
+    "changelog": "standard-changelog",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@angular/animations": "4.1.3",
