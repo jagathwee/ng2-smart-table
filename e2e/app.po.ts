@@ -1,7 +1,7 @@
 import { browser, element, by } from 'protractor';
 
 export class Ng2SmartTableDemoPage {
-  navigateTo(): any {
+  navigateTo(): any { /*https://github.com/DefinitelyTyped/DefinitelyTyped/issues/21638*/
     return browser.get('/');
   }
 
