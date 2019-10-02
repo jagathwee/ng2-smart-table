@@ -1,11 +1,11 @@
 import { browser, element, by } from 'protractor';
 
 export class Ng2SmartTableDemoPage {
-  navigateTo() {
+  navigateTo(): any {
     return browser.get('/');
   }
 
-  getParagraphText() {
+  getParagraphText(): any {
     return element(by.css('app-root h1')).getText();
   }
 }
