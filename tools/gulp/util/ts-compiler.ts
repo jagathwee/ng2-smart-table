@@ -34,7 +34,7 @@ function parseProjectConfig(project: string, options: ts.CompilerOptions) {
 /** Formats the TypeScript diagnostics into a error string. */
 export function formatDiagnostics(diagnostics: ts.Diagnostic[], baseDir: string): string {
   return diagnostics.map(diagnostic => {
-    let res = `• ${chalk.default.red(`TS${diagnostic.code}`)} - `; /*https://github.com/chalk/chalk/issues/228*/
+    let res = `• ${chalk.red(`TS${diagnostic.code}`)} - `; /*https://github.com/chalk/chalk/issues/228*/
 
 
     if (diagnostic.file) {
