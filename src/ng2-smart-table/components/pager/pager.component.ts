@@ -40,6 +40,12 @@ import { DataSource } from '../../lib/data-source/data-source';
           </a>
         </li>
       </ul>
+      <div class="ng2-smart-pagination summary">
+        &emsp;
+        <span>{{ getPageStart() }}</span> &nbsp;-&nbsp;
+        <span>{{ getPageEnd() }}</span> &nbsp;/&nbsp;
+        <span>{{ count }}</span>
+      </div>
     </nav>
     
     <nav *ngIf="perPageSelect && perPageSelect.length > 0" class="ng2-smart-pagination-per-page">
@@ -132,6 +138,17 @@ export class PagerComponent implements OnChanges {
 
   getLast(): number {
     return Math.ceil(this.count / this.perPage);
+  }
+
+  getPageStart(): number {
+    return (this.page - 1) * this.perPage + 1;
+  }
+
+  getPageEnd(): number {
+    if (this.page * this.perPage >= this.count) {
+      return this.count;
+    }
+    return this.page * this.perPage;
   }
 
   isPageOutOfBounce(): boolean {
