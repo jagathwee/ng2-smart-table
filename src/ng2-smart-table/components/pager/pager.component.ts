@@ -25,12 +25,14 @@ import { DataSource } from '../../lib/data-source/data-source';
           </a>
         </li>
       </ul>
-      <li class="ng2-smart-pagination summary">
+      <div class="overview">
+        <div class="counter">
         &emsp;
         <span>{{ getPageStart() }}</span> &nbsp;-&nbsp;
         <span>{{ getPageEnd() }}</span> &nbsp;of&nbsp;
         <span>{{ count }}</span>
-      </li>
+       </div>
+      </div>
     </nav>
     
     <nav *ngIf="perPageSelect && perPageSelect.length > 0" class="ng2-smart-pagination-per-page">
