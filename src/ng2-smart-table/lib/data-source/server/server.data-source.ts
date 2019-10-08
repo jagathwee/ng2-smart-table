@@ -50,9 +50,7 @@ export class ServerDataSource extends LocalDataSource {
     if (data instanceof Array) {
       return data;
     }
-
-    throw new Error(`Data must be an array.
-    Please check that data extracted from the server response by the key '${this.conf.dataKey}' exists and is array.`);
+    return []
   }
 
   /**
